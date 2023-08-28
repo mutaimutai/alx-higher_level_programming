@@ -1,4 +1,4 @@
-#/usr/bin/python3
+#!/usr/bin/python3
 output = ""
 
 for i in range(97, 123):
