@@ -9,10 +9,10 @@ class Square;
             The init method initializes the class instance
 
         @self:
-            represents the class itself
+            A parameter used to refer to the class instance
 
         @size:
-            This is the square size and must bea positive in teger
+            The size of the square, must be a +ve integer
         '''
         if type(size) is int:
             if size < 0:
