@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-    """
-       This is a class rectangle but does nothing
-    """
+"""Defining a rectangle class"""
 class Rectangle:
+    """This represents a rectangle"""
     pass
