@@ -5,7 +5,6 @@
 class Rectangle:
     """Defines a cless rectangle"""
 
-    no_of_rectangles = 0
     def __init__(self, width=0, height=0):
         """We initialize a blueprint representing a triangle.
         Args:
@@ -14,7 +13,6 @@ class Rectangle:
         """
         self.width = width
         self.height = height
-        no_of_rectangles += 1
 
     @property
     def width(self):
@@ -73,5 +71,3 @@ class Rectangle:
     def __del__(self):
         """Deleting an instance of the rectangle"""
         print("Bye rectangle...")
-        rect = rectangle -+ 1
-        return rect
