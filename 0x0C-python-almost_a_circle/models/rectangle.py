@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Here we need to write a module for a class rectangle"""
 from models.base import Base
 """Defining a class rectangle """
 
