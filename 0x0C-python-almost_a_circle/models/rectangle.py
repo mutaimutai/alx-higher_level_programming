@@ -125,19 +125,29 @@ class Rectangle(Base):
         """We have overriden the str method to print info about an object"""
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
 
-    def update(self, *args):
-        """This function updates the attributes of an object
-        Args:
-            args:This are arguments to be updated
+    def update(self, *args, **kwargs):
         """
-        count = len(args)
-        if count >= 1:
+            Assigning key/value arguments to the attributes 
+            in my object
+            kwargs is skipped if args is not empty
+            Args:
+                *args - variable number of arguments passed
+                **kwargs - keyworded arguments
+        """
+        if len(args) == 0:
+            for key, val in kwargs.items():
+                setattr(self,key,val)
+            return
+
+        try:
             self.id = args[0]
-        if count >= 2:
             self.width = args[1]
-        if count >= 3:
             self.height = args[2]
-        if count >= 4:
             self.x = args[3]
-        if count >= 5:
             self.y = args[4]
+        except IndexError:
+            pass
+
+    def to_dictionary(self):
+        """A method that a dictionary representation of an object"""
+        return {'id':self.id,'width':self.width,'height':self.height,'x':self.x,'y':self.y}
