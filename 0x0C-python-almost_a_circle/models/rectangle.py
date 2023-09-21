@@ -28,7 +28,7 @@ class Rectangle(Base):
         Get the width of the rectangle
         Returns:
             int: the width of the rectangle
-            """
+        """
         return self.__width
 
     @width.setter
@@ -49,7 +49,7 @@ class Rectangle(Base):
         Get the height of the rectangle
         Returns:
             int: the height of the rectangle
-            """
+        """
         return self.__height
 
     @height.setter
@@ -70,7 +70,7 @@ class Rectangle(Base):
         Get the X-coordinate of the rectangle (default is 0)
         Returns:
             int: the X-coordinate of the rectangle
-            """
+        """
         return self.__x
 
     @x.setter
@@ -91,7 +91,7 @@ class Rectangle(Base):
         Get the Y-coordinate of the rectangle (default is 0)
         Returns:
             int: the Y-coordinate of the rectangle
-            """
+        """
         return self.__y
 
     @y.setter
