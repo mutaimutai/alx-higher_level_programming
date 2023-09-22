@@ -1,20 +1,19 @@
 #!/usr/bin/python3
-"""Here we need to write a module for a class rectangle"""
+"""Here we need to write a module for a class rectangle."""
 from models.base import Base
-"""Defining a class rectangle """
 
 
 class Rectangle(Base):
-    """Thi is the blueprint of the rectangle class inherits Base"""
+    """Thi is the blueprint of the rectangle class inherits Base."""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Creating an object of the rectangle class
-        Args:
-            width (int):This is the width of the rectangle
-            height (int):Height of the rectangle
-            x (int): X-coordinate of the rectangle (default is 0)
-            y (int): Y-coordinate of the rectangle (default is 0)
-            id (int): The object id
+        """Creating an object of the rectangle class.
+            Args:
+                width (int):This is the width of the rectangle.
+                height (int):Height of the rectangle.
+                x (int): X-coordinate of the rectangle (default is 0).
+                y (int): Y-coordinate of the rectangle (default is 0).
+                id (int): The object id
         """
         super().__init__(id)
         self.width = width
@@ -25,17 +24,17 @@ class Rectangle(Base):
     @property
     def width(self):
         """
-        Get the width of the rectangle
-        Returns:
-            int: the width of the rectangle
+            Get the width of the rectangle.
+            Returns:
+                int: the width of the rectangle.
         """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Sets the width of the rectangle
-        Args:
-            value: The value to set as width
+        """Sets the width of the rectangle.
+            Args:
+                value: The value to set as width.
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -46,17 +45,17 @@ class Rectangle(Base):
     @property
     def height(self):
         """
-        Get the height of the rectangle
-        Returns:
-            int: the height of the rectangle
+            Get the height of the rectangle.
+            Returns:
+                int: the height of the rectangle.
         """
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Sets the height of the rectangle
-        Args:
-            value: The value to set as height
+        """Sets the height of the rectangle.
+            Args:
+                value: The value to set as height.
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -67,17 +66,17 @@ class Rectangle(Base):
     @property
     def x(self):
         """
-        Get the X-coordinate of the rectangle (default is 0)
-        Returns:
-            int: the X-coordinate of the rectangle
+            Get the X-coordinate of the rectangle (default is 0).
+            Returns:
+                int: the X-coordinate of the rectangle.
         """
         return self.__x
 
     @x.setter
     def x(self, value):
-        """Sets the X-coordinate of the rectangle
-        Args:
-            value: The value to set as X-coordinate
+        """Sets the X-coordinate of the rectangle.
+            Args:
+                value: The value to set as X-coordinate.
         """
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
@@ -88,17 +87,17 @@ class Rectangle(Base):
     @property
     def y(self):
         """
-        Get the Y-coordinate of the rectangle (default is 0)
-        Returns:
-            int: the Y-coordinate of the rectangle
+            Get the Y-coordinate of the rectangle (default is 0).
+            Returns:
+                int: the Y-coordinate of the rectangle.
         """
         return self.__y
 
     @y.setter
     def y(self, value):
-        """Sets the Y-coordinate of the rectangle
-        Args:
-            value: The value to set as Y-coordinate
+        """Sets the Y-coordinate of the rectangle.
+            Args:
+                value: The value to set as Y-coordinate.
         """
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
@@ -120,17 +119,18 @@ class Rectangle(Base):
 
     def __str__(self):
         """We have overriden the str method to print info about an object"""
-        return (f"[Rectangle]({self.id}){self.__x}/{self.__y}-{self.__width} /
-                {self.__height}")
+        return "[{}] ({}) {}/{} - {}/{}".format(type(self).__name__, self.id,
+                                                self.__x, self.__y,
+                                                self.__width, self.__height)
 
     def update(self, *args, **kwargs):
         """
-            Assigning key/value arguments to the attributes
-            in my object
-            kwargs is skipped if args is not empty
+            Assigning key/value arguments to the attributes.
+            in my object.
+            kwargs is skipped if args is not empty.
             Args:
-                *args - variable number of arguments passed
-                **kwargs - keyworded arguments
+                *args - variable number of arguments passed.
+                **kwargs - keyworded arguments.
         """
         if len(args) == 0:
             for key, val in kwargs.items():
@@ -148,5 +148,6 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """A method that a dictionary representation of an object"""
-        return {'id': self.id, 'width': self.width,
-                'height': self.height, 'x': self.x, 'y': self.y}
+        return {'x': getattr(self, "x"), 'y': getattr(self, "y"),
+                'id': getattr(self, "id"), 'height': getattr(self, "height"),
+                'width': getattr(self, "width")}
