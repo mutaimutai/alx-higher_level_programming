@@ -60,7 +60,7 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ("")
         rectangle_str = ""
-    
+ 
         for i in range(self.height):
             rectangle_str += str(self.print_symbol) * self.width
             if i < self.height - 1:
