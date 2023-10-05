@@ -98,8 +98,3 @@ class Rectangle:
             return rect_2
         else:
             return rect_1
-
-    @classmethod
-    def square(cls, size=0):
-        """New rectangle instance as square"""
-       return (Rectangle(size, size))
