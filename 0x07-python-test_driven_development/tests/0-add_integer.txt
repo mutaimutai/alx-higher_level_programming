@@ -1,0 +1,49 @@
+The ``0-add_integer`` module
+
+============================
+
+Importing function from the module:
+    >>> add_interger = __import__('0-add_integer').add_integer
+
+Adding 1 and 2
+    >>> add_integer(1,2)
+    3
+Adding of negative numbers
+    >>> add_integer(-1,-1)
+    -2
+Adding a negative and a positive number
+    >>> add_integer(2, -1)
+    1
+Addition of floating numbers
+    >>> add_integer(2.0,3.0)
+    5
+Adding 2.1 and 98
+    >>> add_integer(2.1)
+    100
+Passing a None
+    >>> add_integer()
+    Traceback (most recent call last):
+	      ...
+    TypeError: a must be an integer
+Adding a letter and a number
+    >>> add_integer('k',8)
+    Traceback (most recent call last):
+	      ...
+    TypeError: a must be an integer
+Adding two letters
+    >>> add_integer('f','j')
+    Traceback (most recent call last):
+	      ...
+    TypeError: a must be an integer
+Adding a number and a list
+    >>> add_integer([],9)
+    Traceback (most recent call last):
+	      ...
+    TypeError: a must be an integer
+Passing a string
+    >>> add_integer("heeloo")
+    Traceback (most recent call last):
+	      ...
+    TypeError: a must be an integer
+
+
