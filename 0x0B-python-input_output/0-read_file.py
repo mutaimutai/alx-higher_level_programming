@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-"""Defining a function that prints a file"""
+"""This module defines a text file-reading function"""
 
 
 def read_file(filename=""):
-    """A function that reads a textfile and prints it out"""
-    with open(filename, 'r', encoding="utf-8") as file:
-        print(file.read(), end="")
-
+    """Prints the contents of a UTF8 text file"""
+    with open(filename, encoding="utf-8") as f:
+        print(f.read(), end="")
