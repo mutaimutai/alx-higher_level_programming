@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Defining a function that prints a file"""
+
+
 def read_file(filename=""):
     """A function that reads a textfile and prints it out
     Args:
