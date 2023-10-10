@@ -7,5 +7,6 @@ def save_to_json_file(my_obj, filename):
     a text file using JSON representation
     """
     import json
+    json_string = json.dumps(my_obj)
     with open(filename, 'w', encoding="UTF8") as file:
-        filename = json.dumps(my_obj)
+        file.write(json_string)
