@@ -7,7 +7,7 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 try:
     py_list = load_from_json_file("add_item.json")
-except:
+except FileNotFoundError:
     py_list = []
 
 if __name__ == "__main__":
