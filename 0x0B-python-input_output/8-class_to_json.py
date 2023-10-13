@@ -2,7 +2,6 @@
 """Function that returns the dict description
 for JSON serialization of an object
 """
-import json
 
 
 def class_to_json(obj):
