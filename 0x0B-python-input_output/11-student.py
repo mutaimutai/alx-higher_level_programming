@@ -23,3 +23,7 @@ class Student:
                     pass
             return new_dict
 
+    def reload_from_json(self, json):
+        """Replaces all atributes of the student instances"""
+        for key, value in json.items():
+            setattr(self, key, value)
