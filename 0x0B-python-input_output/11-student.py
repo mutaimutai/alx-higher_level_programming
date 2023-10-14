@@ -12,14 +12,14 @@ class Student:
 
     def to_json(self, attrs=None):
         """Gets a dictionary representation of the Student"""
-        if attrs == None:
+        if attrs is None:
             return (self.__dict__)
         else:
             new_dict = {}
             for a in attrs:
                 try:
                     new_dict[a] = self.__dict__[a]
-                except:
+                except Exception:
                     pass
             return new_dict
 
