@@ -112,7 +112,7 @@ class Rectangle(Base):
         """
         if len(args) == 0:
             for key, val in kwargs.items():
-                self.__setattr__(key, val)
+                setattr(self, key, val)
             return
 
         try:
