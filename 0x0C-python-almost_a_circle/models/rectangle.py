@@ -100,8 +100,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """Prints a string representation of a rectangle instance"""
-        return (f"[Rectangle] ({self.id}) {self.x}/{self.y}"
-                f"- {self.width}/{self.height}")
+        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
+                f"{self.width}/{self.height}")
 
     def update(self, *args, **kwargs):
         """
