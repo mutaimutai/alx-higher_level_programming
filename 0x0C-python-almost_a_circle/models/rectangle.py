@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Class rectangle that inherits from Base"""
-
 from .base import Base
+
 
 class Rectangle(Base):
     """Defining the class Rectangle which inherits from Base"""
@@ -30,7 +30,7 @@ class Rectangle(Base):
         Args:
             value (int) : value of width
         """
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -47,7 +47,7 @@ class Rectangle(Base):
         Args:
             value (int) : value of height
         """
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be > 0")
@@ -64,7 +64,7 @@ class Rectangle(Base):
         Args:
             value (int) : value of X-coordinate
         """
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("x  must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
@@ -81,7 +81,7 @@ class Rectangle(Base):
         Args:
             value (int) : value of the Y-coordinate
         """
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("y  must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
@@ -100,7 +100,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """Prints a string representation of a rectangle instance"""
-        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}")
+        return (f"[Rectangle] ({self.id})
+                {self.x}/{self.y} - {self.width}/{self.height}")
 
     def update(self, *args, **kwargs):
         """
@@ -126,4 +127,6 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """Return the dictionary representation of a rectangle instance"""
-        return ({'id' : getattr(self,'id'), 'width' : getattr(self, 'width'), 'height' : getattr(self, 'height'), 'x' : getattr(self, 'x'), 'y' : getattr(self, 'y')})
+        return ({'id': getattr(self,'id'), 'width': getattr(self, 'width'),
+                 'height': getattr(self, 'height'), 'x': getattr(self, 'x'),
+                 'y': getattr(self, 'y')})
