@@ -50,3 +50,7 @@ class Square(Rectangle):
             args[3] = self.y
         except Exception:
             pass
+
+    def to_dictionary(self):
+        """Return a dictionary representation of a square instance"""
+        return ({'id' : getattr(self, 'id'), 'size' : getattr(self, 'size'), 'x' : getattr(self, 'x'), 'y' : getattr(self, 'y')})
