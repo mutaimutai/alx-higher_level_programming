@@ -6,6 +6,7 @@ import json
 class Base:
     """Defining the class base"""
     __nb_objects = 0
+
     def __init__(self, id=None):
         """The class constructor
         Args:
@@ -21,7 +22,8 @@ class Base:
     def to_json_string(list_dictionaries):
         """Serialize an object to json string representation
         Args:
-            list_dictionaries : The dictionary to be serialized to a json string
+            list_dictionaries : The dictionary to be
+            serialized to a json string
         """
         if list_dictionaries is None:
             return "[]"
