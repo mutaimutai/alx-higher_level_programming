@@ -4,7 +4,7 @@ from .rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """This is a blueprint of a square object that inherits from class Rectangle"""
+    """This is a blueprint of an object that inherits from class Rectangle"""
     def __init__(self, size, x=0, y=0, id=None):
         """Initializing an object of the class square
         Args:
@@ -13,7 +13,6 @@ class Square(Rectangle):
             y (int) : The Y-coordinate of the square
         """
         super().__init__(size, size, x, y, id)
-
 
     def __str__(self):
         """Overloading the str method to return string rep of square"""
@@ -27,7 +26,7 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """Set the size of the square"""
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value <= 0:
             raise ValueError("size must be > 0")
@@ -40,7 +39,7 @@ class Square(Rectangle):
                 args : non-keyworded arguments
                 kwargs : keyworded argumemts
         """
-        if args == None:
+        if args is None:
             for key, value in kwargs.items():
                 setattr(self, key, value)
         try:
@@ -53,4 +52,5 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """Return a dictionary representation of a square instance"""
-        return ({'id' : getattr(self, 'id'), 'size' : getattr(self, 'size'), 'x' : getattr(self, 'x'), 'y' : getattr(self, 'y')})
+        return ({'id': getattr(self, 'id'), 'size': getattr(self, 'size'),
+                'x': getattr(self, 'x'), 'y': getattr(self, 'y')})
