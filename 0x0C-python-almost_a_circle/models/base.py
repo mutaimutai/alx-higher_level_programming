@@ -40,8 +40,7 @@ class Base:
         dict_list = []
         with open(filename, 'w', encoding='UTF8') as js:
             if list_objs is None:
-                js.write(dict_list)
-                return js
+                js.write([])
             else:
                 for i in list_objs:
                     dict_list.append(i.to_dictionary())
