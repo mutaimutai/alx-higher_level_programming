@@ -37,15 +37,13 @@ class Base:
                 list_objs : Are list of instances who inherits from Base
         """
         filename = cls.__name__ + ".json"
+        dict_list = []
         with open(filename, 'w', encoding='UTF8') as js:
             if list_objs is None:
                 js.write("[]")
                 return js
             else:
                 for i in list_objs:
-                    dicto = i.to_dictionary()
-                    js_dict = i.to_json_string(dicto)
-                    js_list = []
-                    js_list.append(js_dict)
-                    js.write(str(js_list))
-                return js_list
+                    dict_list.append(i.to_dictionary())
+                js_lists = i.to_json_string(dict_list)
+                js.write(js_lists)
