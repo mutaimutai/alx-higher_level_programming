@@ -40,12 +40,12 @@ class Base:
         dict_list = []
         with open(filename, 'w', encoding='UTF8') as js:
             if list_objs is None:
-                js.write([])
+                js.write("[]")
             else:
                 for i in list_objs:
                     dict_list.append(i.to_dictionary())
-                js_lists = i.to_json_string(dict_list)
-            js.write(js_lists)
+                js_lists = Base.to_json_string(dict_list)
+                js.write(js_lists)
 
     @staticmethod
     def from_json_string(json_string):
