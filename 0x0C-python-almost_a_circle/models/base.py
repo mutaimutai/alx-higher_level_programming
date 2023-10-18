@@ -47,3 +47,9 @@ class Base:
                     dict_list.append(i.to_dictionary())
                 js_lists = i.to_json_string(dict_list)
                 js.write(js_lists)
+    @staticmethod
+    def from_json_string(json_string):
+        """Return the list of the JSON string representation"""
+        if json_string is None:
+            return "[]"
+        return json_string
