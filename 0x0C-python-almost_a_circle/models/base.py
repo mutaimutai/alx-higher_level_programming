@@ -52,4 +52,4 @@ class Base:
         """Return the list of the JSON string representation"""
         if json_string is None:
             return "[]"
-        return json_string
+        return json.loads(json_string)
