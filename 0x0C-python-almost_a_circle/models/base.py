@@ -57,7 +57,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Method that return an instance with all attributes set"""
-        if dictionary and dictionry != {}:
+        if dictionary and dictionary != {}:
             r1 = cls(2,3)
             r1.update(**dictionary)
             return r1
