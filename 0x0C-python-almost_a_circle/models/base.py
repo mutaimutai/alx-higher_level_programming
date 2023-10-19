@@ -64,3 +64,21 @@ class Base:
                 r1 = cls(2)
             r1.update(**dictionary)
             return r1
+
+    @classmethod
+    def load_from_file(cls):
+        """
+            This method returns a list of instances from a json file
+            containing json string rep pf a dictionary
+        """
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, 'r', encoding='UTF=8')  as fl:
+                js_string = fl.read()
+                js_list = Base.from_json_string(js_string)
+                objects = []
+                for d in js_list:
+                    objects.append(cls.create(**d))
+                return objects
+        except IOError:
+            return []
