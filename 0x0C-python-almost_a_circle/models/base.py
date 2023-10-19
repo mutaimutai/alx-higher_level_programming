@@ -73,7 +73,7 @@ class Base:
         """
         filename = cls.__name__ + ".json"
         try:
-            with open(filename, 'r', encoding='UTF=8')  as fl:
+            with open(filename, 'r', encoding='UTF=8') as fl:
                 js_string = fl.read()
                 js_list = Base.from_json_string(js_string)
                 objects = []
